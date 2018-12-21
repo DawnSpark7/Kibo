@@ -3,6 +3,7 @@
 
 # Libraries required
 
+import platform
 import webbrowser
 import random
 import os
@@ -21,13 +22,24 @@ def flipcoin():
 
 # shutdown() body
 def shutdown():
-    ch = input("Which OS :\n 1.Windows \n 2.Linux \n 3.Mac OS X ->")
-    if ch == '1':
+    ch = platform.system()
+    if ch == 'Windows':
         os.system('shutdown /s /t 1')
-    elif ch == '2':
+    elif ch == 'Linux':
         os.system('sudo shutdown now')
     else:
         os.system('sudo shutdown -h now')
+
+# sleep() body
+def sleep():
+    ch = platform.system()
+    print ('Good Bye,'+name)
+    if ch == 'Windows':
+        os.system('Rundll32.exe powrprof.dll,SetSuspendState')
+    elif ch =='Linux':
+        os.system('systemctl suspend')
+    else:
+        os.system('pmset sleepnow')
 
 # openURL() body
 def openURL():
@@ -42,18 +54,18 @@ def createDictionary():
         '#rolldie' : rolldie ,
         '#flipcoin' : flipcoin ,
         '#shutdown' : shutdown,
+        '#sleep' : sleep,
         '#openURL' : openURL,
-
         }    
     return dict  
 
 cmds_list = createDictionary()
 
-cmds_keys = ["#rolldie","#flipcoin","#shutdown","#openURL"]
+cmds_keys = ["#rolldie","#flipcoin","#shutdown","#sleep","#openURL"]
 
 print ('''
              #######################################
-             #       Kibo v1.0 [Experimental]      #
+             #              Kibo v1.1              #
              #         Developed by Kaname         #
              #######################################
                                                         ''')
@@ -88,8 +100,11 @@ def main():
                     cmds_list[command]()
                     print('\n')
                     main()
+                
+                else:
+                    raise IOError()
 
-            except:
+            except IOError:
                 print ('Invalid command! Try again or enter \'#help\' for all commands list')
        
 main()
