@@ -108,4 +108,3 @@ def main():
                 print ('Invalid command! Try again or enter \'#help\' for all commands list')
        
 main()
-
