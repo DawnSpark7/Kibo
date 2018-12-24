@@ -15,11 +15,12 @@ Kibo is inspired from a popular Indian cross-platform messaging app [hike](https
 * #rolldie
 * #flipcoin
 * #shutdown
+* #sleep
 * #openURL
 * more to come.... 😊
 
 # Platform 💻 #
-* Works with Windows and Linux (32-64 bit)
+* Works with Windows, Mac OS and Linux (32-64 bit)
 
 ## Getting Started ##
 
