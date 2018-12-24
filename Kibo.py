@@ -46,6 +46,25 @@ def openURL():
     URL = input('Enter URL : ')
     webbrowser.open(URL)
 
+# sysinfo() body
+def sysinfo():
+    info = """
+    Machine: {}\n
+    Version: {}\n
+    Platform: {}\n
+    Name: {}\n
+    Family: {}\n
+    Processor: {}\n
+""".format(
+        platform.machine(),
+        platform.version(),
+        platform.platform(),
+        platform.node(),
+        platform.system(),
+        platform.processor(),
+    )
+    print (info) 
+
 # Initialize everything and load all the commands
 
 def createDictionary():
@@ -56,16 +75,18 @@ def createDictionary():
         '#shutdown' : shutdown,
         '#sleep' : sleep,
         '#openURL' : openURL,
+        '#sysinfo' : sysinfo,
+
         }    
     return dict  
 
 cmds_list = createDictionary()
 
-cmds_keys = ["#rolldie","#flipcoin","#shutdown","#sleep","#openURL"]
+cmds_keys = ["#rolldie","#flipcoin","#shutdown","#sleep","#openURL","#sysinfo"]
 
 print ('''
              #######################################
-             #              Kibo v1.1              #
+             #              Kibo v1.2              #
              #         Developed by Kaname         #
              #######################################
                                                         ''')
@@ -87,7 +108,7 @@ def main():
             print ('Did you added \'#\' at the beginning?')
 
         elif command == '#exit':
-            exit()
+            quit()
 
         elif command == '#help':
             print ('\nFollowing are commands I support : ')
