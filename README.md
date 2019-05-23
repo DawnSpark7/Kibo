@@ -17,6 +17,7 @@ Kibo is inspired from a popular Indian cross-platform messaging app [hike](https
 * #shutdown
 * #sleep
 * #openURL
+* #openApp (Windows 8.1 & 10 Only)
 * more to come.... 😊
 
 # Platform 💻 #

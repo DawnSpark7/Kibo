@@ -20,6 +20,11 @@ def flipcoin():
     else:
         print("Tails!")
 
+# openApp() body
+def openApp():
+    app = raw_input('Enter app name : ')
+    os.system('open {}:').format(app)
+
 # shutdown() body
 def shutdown():
     ch = platform.system()
@@ -72,6 +77,7 @@ def createDictionary():
 
         '#rolldie' : rolldie ,
         '#flipcoin' : flipcoin ,
+        '#openApp' : openApp ,
         '#shutdown' : shutdown,
         '#sleep' : sleep,
         '#openURL' : openURL,
@@ -82,13 +88,13 @@ def createDictionary():
 
 cmds_list = createDictionary()
 
-cmds_keys = ["#rolldie","#flipcoin","#shutdown","#sleep","#openURL","#sysinfo"]
+cmds_keys = ["#rolldie","#flipcoin","#openApp","#shutdown","#sleep","#openURL","#sysinfo"]
 
 print ('''
-             #######################################
-             #              Kibo v1.2              #
-             #         Developed by Kaname         #
-             #######################################
+             ############################
+             #              Kibo v1.2                            #
+             #         Developed by Kaname           #
+             ############################
                                                         ''')
 
 print ('Hey! This is Kibo (^_^)')
